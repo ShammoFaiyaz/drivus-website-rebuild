@@ -1,0 +1,14 @@
+.span {
+  font-size: 14px;
+  padding-left: 4px;
+}
+
+.anchor {
+  color: black;
+  text-decoration: none;
+}
+
+.vl {
+  display: inline;
+  border-left: 2px solid #0A2457;
+}

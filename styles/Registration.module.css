@@ -1,0 +1,25 @@
+/* .pic {
+  background-image: url('../public/rent.jpg');
+  background-size: cover;
+  height: 100vh;
+}  */
+
+
+.main {
+  background: rgb(2,0,36);
+  background: linear-gradient(342deg, rgba(2,0,36,1) 0%, rgba(106,57,184,1) 0%, rgba(168,24,230,1) 62%);
+}
+
+/* @media (max-width: @screen-sm) {
+  body{font-size: 14px;}
+} */
+
+.upload-list-inline .ant-upload-list-item {
+  float: left;
+  width: 200px;
+  margin-right: 8px;
+}
+
+.upload-list-inline [class*='-upload-list-rtl'] .ant-upload-list-item {
+  float: right;
+}

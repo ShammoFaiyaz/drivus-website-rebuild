@@ -1,0 +1,14 @@
+.root {
+  padding: 100px 0px;
+}
+
+.title {
+  font-size: 16px;
+  color: #1A3760;
+  font-weight: bold;
+}
+
+.para {
+  font-size: 12px;
+  margin: 3px;
+}

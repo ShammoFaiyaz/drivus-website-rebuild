@@ -1,0 +1,43 @@
+.border {
+  border-radius: 8px 8px 0px 0px;
+  position: relative;
+}
+
+.pagination {
+  border: none !important;
+  background-color: #F9F9F9 !important;
+  color: #0A2457;
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  z-index: 1;
+  left: 10px;
+  background-color: #EB6144;
+  padding: 7px 10px;
+}
+
+.team {
+  border-radius: 9px;
+  position: relative;
+}
+
+.details {
+  position: absolute;
+  bottom: 50px;
+  z-index:1;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  left:30px;
+}
+
+.subDetails {
+  position: absolute;
+  bottom:25px;
+  z-index: 1;
+  color: white;
+  left:30px;
+  font-size: 14px;
+}
