@@ -14,7 +14,7 @@ import { Loading } from "@nextui-org/react";
 const menu = [
   { title: "Home", path: "/" },
   { title: "About us", path: "/about-us" },
-  { title: "How it works", path: "/how-it-work" },
+  { title: "How it Works", path: "/how-it-work" },
   { title: "Our Plans", path: "/our-plan" },
   { title: "FAQ", path: "/faqs" },
   { title: "Contact us", path: "/contact-us" },

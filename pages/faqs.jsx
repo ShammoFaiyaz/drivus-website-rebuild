@@ -41,8 +41,7 @@ const Faqs = () => {
                     className="d-flex align-items-center justify-content-between"
                     style={{ fontSize: 17 }}
                   >
-                    {faq.question}
-
+                    <h6 className="fw-bold">{faq.question}</h6>
                     {index === active ? <BiX /> : <BiPlus />}
                   </div>
                   <div

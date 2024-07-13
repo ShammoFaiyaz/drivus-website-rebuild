@@ -20,12 +20,12 @@ const How = () => {
                   className="fw-bold animate__animated animate__fadeIn animate__delay-1s"
                   style={{ color: "#272561", fontSize: 40 }}
                 >
-                  Join Drivus <br />
+                  Join <span className="text-danger">D</span>rivus <br />
                   <span className="ms-4">Drive your freedom!</span>
                   <br />
                   <span className="ms-4">…own a brand new car</span>
                 </h1>
-                <h6
+                {/* <h6
                   className="pt-1 animate__animated animate__fadeInUp animate__delay-2s"
                   style={{ color: "black", fontSize: 17 }}
                 >
@@ -33,7 +33,7 @@ const How = () => {
                 </h6>
                 <div className="mt-2 mb-5 pb-3 animate__animated animate__fadeInUp animate__delay-2s">
                   Join Drivus and get your dream car today!
-                </div>
+                </div> */}
                 <Link href="/how-it-work">
                   <a className="btn-primary animate__animated animate__fadeInUp animate__delay-2s">
                     How it works
@@ -138,7 +138,7 @@ const How = () => {
               className="text-white p-5"
               style={{ backgroundColor: "#272561", borderRadius: 23 }}
             >
-              <h1 className="text-white fw-bold">Rent-to-Own Contracts</h1>
+              <h1 className="text-white fw-bold">Rent-To-Own Contracts</h1>
               <p className="pb-3 mt-3 me-5" style={{ fontSize: 17 }}>
                 Start the journey towards owning your ultimate freedom, your own
                 brand new car!

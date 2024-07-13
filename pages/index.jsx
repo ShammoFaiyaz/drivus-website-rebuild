@@ -54,8 +54,7 @@ const Home = () => {
                     className="d-flex align-items-center justify-content-between"
                     style={{ fontSize: 17 }}
                   >
-                    {faq.question}
-
+                    <h6 className="fw-bold">{faq.question}</h6>
                     {index === active ? <BiX /> : <BiPlus />}
                   </div>
                   <div
@@ -116,6 +115,15 @@ const Home = () => {
                   <h4>Call:</h4>
                   <p>0410567867, 0490887210</p>
                 </div>
+
+                <a
+                  href="https://maps.app.goo.gl/8VdHafV4w62rzGw89"
+                  target="_blank"
+                  className="py-2"
+                  style={{ fontSize: 17 }}
+                >
+                  Get directions
+                </a>
 
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.8566707294053!2d150.7332831!3d-33.9962151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12f239fc2ec7b3%3A0x1661827db8dad810!2s56%20Williamson%20St%2C%20Oran%20Park%20NSW%202570%2C%20Australia!5e0!3m2!1sen!2sbd!4v1719727008192!5m2!1sen!2sbd"

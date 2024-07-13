@@ -57,7 +57,7 @@ const Footer = () => {
                     <HiChevronRight />
                   </i>
                   <Link href="/how-it-work">
-                    <a>How it works</a>
+                    <a>How it Works</a>
                   </Link>
                 </li>
                 <li>
@@ -111,10 +111,10 @@ const Footer = () => {
 
             <div className="col-lg-3 col-md-6 footer-links">
               <h4>Our Social Networks</h4>
-              <p>
+              {/* <p>
                 Cras fermentum odio eu feugiat lide par naso tierra videa magna
                 derita valies
-              </p>
+              </p> */}
               <div className="social-links mt-3">
                 <Link href="/">
                   <a

@@ -108,7 +108,11 @@ const HowItWorks = () => {
                   <br />
                   <span className="ms-4">…and drive your brand new car</span>
                 </h1>
-                <span className="btn-primary" style={{ marginLeft: "120px" }}>
+                <span
+                  onClick={() => handleShow("enquire")}
+                  className="btn-primary"
+                  style={{ marginLeft: "120px" }}
+                >
                   Join Us
                 </span>
               </div>
@@ -121,12 +125,14 @@ const HowItWorks = () => {
           <div className="container py-5" style={{ color: "#25225B" }}>
             <div className="row justify-content-between align-items-start">
               <div className="col-md-4">
-                <img
-                  style={{ width: "60px" }}
-                  src="/icons/car.png"
-                  className="img-fuild pb-3 "
-                  alt=""
-                />
+                <div className="text-center">
+                  <img
+                    style={{ width: "80px" }}
+                    src="/icons/car.png"
+                    className="img-fuild pb-3 "
+                    alt=""
+                  />
+                </div>
                 <h5 className="fw-bolder">
                   Step 1: Choose Your Preferred Used Car Plan
                 </h5>
@@ -136,12 +142,15 @@ const HowItWorks = () => {
                 </p>
               </div>
               <div className="col-md-4">
-                <img
-                  style={{ width: "60px" }}
-                  src="/icons/accounts.png"
-                  className="img-fuild pb-3"
-                  alt=""
-                />
+                <div className="text-center">
+                  {" "}
+                  <img
+                    style={{ width: "80px" }}
+                    src="/icons/accounts.png"
+                    className="img-fuild pb-3"
+                    alt=""
+                  />
+                </div>
                 <h5 className="fw-bolder">
                   Step 2: Complete Setting up Your Account
                 </h5>
@@ -154,12 +163,14 @@ const HowItWorks = () => {
                 </p>
               </div>
               <div className="col-md-4">
-                <img
-                  style={{ width: "60px" }}
-                  src="/icons/steering.png"
-                  className="img-fuild pb-3"
-                  alt=""
-                />
+                <div className="text-center">
+                  <img
+                    style={{ width: "80px" }}
+                    src="/icons/steering.png"
+                    className="img-fuild pb-3"
+                    alt=""
+                  />
+                </div>
                 <h5 className="fw-bolder">
                   Step 3: Drive and Qualify for a Brand-New Rent
                 </h5>
