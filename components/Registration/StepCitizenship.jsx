@@ -49,13 +49,13 @@ const SetpCitizen = ({ current, data, setData, prevStep, nextStep }) => {
 
   return (
     <div className="container">
-      <div className="row" style={{ minHeight: "650px" }}>
+      <div className="row" style={{ minHeight: "580px" }}>
         <div className="col-md-7">
           <Form form={form} autoComplete="off" onFinish={handleFinish}>
             {(values) => (
               <div className="row mt-5">
                 <div className="col-12 my-5 pt-lg-5">
-                  <h2>
+                  <h2 style={{ color: "#272561" }}>
                     Please choose the country of your citizenship or permanent
                     residency.
                   </h2>
@@ -71,9 +71,15 @@ const SetpCitizen = ({ current, data, setData, prevStep, nextStep }) => {
                     ]}
                   >
                     <Radio.Group size="large">
-                      <Radio.Button value="AUS">AUS</Radio.Button>
-                      <Radio.Button value="NZ">NZ</Radio.Button>
-                      <Radio.Button value="Other">Other Residency</Radio.Button>
+                      <Radio.Button style={{ color: "#272561" }} value="AUS">
+                        AUS
+                      </Radio.Button>
+                      <Radio.Button style={{ color: "#272561" }} value="NZ">
+                        NZ
+                      </Radio.Button>
+                      <Radio.Button style={{ color: "#272561" }} value="Other">
+                        Other Residency
+                      </Radio.Button>
                     </Radio.Group>
                   </Form.Item>
                 </div>
@@ -135,9 +141,9 @@ const SetpCitizen = ({ current, data, setData, prevStep, nextStep }) => {
         </div>
       </div>
 
-      <div className="container position-fixed w-100 bottom-0">
+      {/* <div className="container position-fixed w-100 bottom-0">
         <StepProgress percent={10} />
-      </div>
+      </div> */}
     </div>
   );
 };

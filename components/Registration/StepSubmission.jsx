@@ -4,9 +4,12 @@ import { Checkbox, message } from "antd";
 import { saveApplication } from "../../service/lead.service";
 import StepProgress from "../StepProgress";
 import { MdOutlineArrowBackIos } from "react-icons/md";
+import {
+  primaryDocumentTypes,
+  secondaryDocumentTypes,
+} from "../../utils/array";
 
 const StepSubmission = ({ current, data, setData, prevStep }) => {
-  const [totalPoint, setTotalPoint] = useState(230);
   const [totalIncome, setIncome] = useState(470);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -33,11 +36,29 @@ const StepSubmission = ({ current, data, setData, prevStep }) => {
     }, 300);
   };
 
+  const getTotalPoint = () => {
+    let documents = [];
+    if (data.primaryDocuments) documents = [...data.primaryDocuments];
+    if (data.secondaryDocuments)
+      documents = [...documents, ...data.secondaryDocuments];
+    return documents.reduce(
+      (acc, curr) => acc + (documentType[curr.type] || 0),
+      0
+    );
+  };
+
+  const documentType = [
+    ...primaryDocumentTypes,
+    ...secondaryDocumentTypes,
+  ].reduce((acc, cur) => ({ ...acc, [cur.name]: cur.point }), {});
+
+  console.log("getTotalPoint:", getTotalPoint());
+
   return (
     <div className="container">
       <div className="row" style={{ minHeight: "650px" }}>
         <div className="col-md-8">
-          <h4>Personal Information</h4>
+          <h4 style={{ color: "#272561" }}>Personal Information</h4>
           <div className="row">
             <div className="col-md-12 mb-3">
               <table>
@@ -71,7 +92,7 @@ const StepSubmission = ({ current, data, setData, prevStep }) => {
             </div>
 
             <div className="col-md-12 my-3">
-              <h4>Citizenship</h4>
+              <h4 style={{ color: "#272561" }}>Citizenship</h4>
               {data.citizenship}
               {data.residency && (
                 <p>
@@ -87,7 +108,7 @@ const StepSubmission = ({ current, data, setData, prevStep }) => {
             </div>
 
             <div className="col-md-12 my-3">
-              <h4>Driving License</h4>
+              <h4 style={{ color: "#272561" }}>Driving License</h4>
               {data.drivingLicense ? (
                 <table>
                   <tbody>
@@ -121,14 +142,16 @@ const StepSubmission = ({ current, data, setData, prevStep }) => {
             </div>
 
             <div className="col-md-12 my-3">
-              <h4>100 point Id Documents</h4>
+              <h4 style={{ color: "#272561" }}>100 point Id Documents</h4>
 
               <p>
                 Total Point:{" "}
-                {totalPoint < 100 ? (
-                  <span className="text-danger h5">{totalPoint}</span>
+                {getTotalPoint() < 100 ? (
+                  <span className="text-danger h5">{getTotalPoint() || 0}</span>
                 ) : (
-                  <span className="text-success h5">{totalPoint}</span>
+                  <span className="text-success h5">
+                    {getTotalPoint() || 0}
+                  </span>
                 )}
               </p>
 
@@ -148,7 +171,7 @@ const StepSubmission = ({ current, data, setData, prevStep }) => {
                 </table>
               ) : (
                 <p className="text-danger">
-                  Please provide at least 1 primary documents
+                  Please provide at least 1 primary document
                 </p>
               )}
 
@@ -168,7 +191,7 @@ const StepSubmission = ({ current, data, setData, prevStep }) => {
                 </table>
               ) : (
                 <p className="text-danger">
-                  Please provide at least 1 secodery documents
+                  Please provide at least 1 secondary document
                 </p>
               )}
             </div>
@@ -177,7 +200,7 @@ const StepSubmission = ({ current, data, setData, prevStep }) => {
               <h4 className="mt-3">Income Sources</h4>
               {totalIncome < 700 && (
                 <p className="text-danger">
-                  Your total income at least $ 700 /week
+                  Your total income must be at least $ 700 per week
                 </p>
               )}
               {data.incomeSources ? (
@@ -202,12 +225,12 @@ const StepSubmission = ({ current, data, setData, prevStep }) => {
             </div>
 
             <div className="col-md-12 my-3">
-              <h4>My Desired car</h4>
+              <h4 style={{ color: "#272561" }}>My Desired car</h4>
               {data.desiredCar}
             </div>
 
             <div className="col-md-6 my-3">
-              <h4>Postal Address</h4>
+              <h4 style={{ color: "#272561" }}>Postal Address</h4>
               {data.postalAddress ? (
                 <table>
                   <tbody>
@@ -277,7 +300,7 @@ const StepSubmission = ({ current, data, setData, prevStep }) => {
             </div>
 
             <div className="col-md-6 my-3">
-              <h4>Residential Address</h4>
+              <h4 style={{ color: "#272561" }}>Residential Address</h4>
               {data.residentialAddress ? (
                 <table>
                   <tbody>
@@ -369,7 +392,7 @@ const StepSubmission = ({ current, data, setData, prevStep }) => {
                 className="me-2"
                 onClick={() => setChecked(!checked)}
               >
-                I confirm that I have read Drivus{" "}
+                I confirm that I have read Drivus’{" "}
                 <Link
                   href={process.env.NEXT_PUBLIC_TOS_URL || "#"}
                   underline="hover"
@@ -377,11 +400,11 @@ const StepSubmission = ({ current, data, setData, prevStep }) => {
                 >
                   terms and conditions
                 </Link>
-                , and AGREE
+                , and I agree to it.
               </Checkbox>
               <p className="my-2">
                 Please double check your submissions! Once submitted, no further
-                changes cannot be made online.
+                changes can be made.
               </p>
               <div className="d-flex align-items-center justify-content-center mb-5">
                 <Button
@@ -420,9 +443,9 @@ const StepSubmission = ({ current, data, setData, prevStep }) => {
         </div> */}
       </div>
 
-      <div className="container position-fixed w-100 bottom-0">
+      {/* <div className="container position-fixed w-100 bottom-0">
         <StepProgress percent={100} />
-      </div>
+      </div> */}
 
       <Modal
         aria-labelledby="modal-title"
@@ -433,7 +456,7 @@ const StepSubmission = ({ current, data, setData, prevStep }) => {
         preventClose
       >
         <Modal.Header>
-          <h4>Application Submitted</h4>
+          <h4 style={{ color: "#272561" }}>Application Submitted</h4>
         </Modal.Header>
         <Modal.Body>
           <Image

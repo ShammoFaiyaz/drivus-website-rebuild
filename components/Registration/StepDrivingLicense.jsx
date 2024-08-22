@@ -136,7 +136,7 @@ const StepDrivingLicense = ({
 
   return (
     <div className="container">
-      <div className="row" style={{ minHeight: "650px" }}>
+      <div className="row" style={{ minHeight: "575px" }}>
         <div className="col-md-8">
           <Form
             form={form}
@@ -146,8 +146,13 @@ const StepDrivingLicense = ({
           >
             {(values) => (
               <div className="row">
-                <div className="col-12 mt-5 mb-4 pt-lg-5">
-                  <h2>Please select your Driving License type.</h2>
+                <div
+                  style={{ color: "#272561" }}
+                  className="col-12 mt-5 mb-4 pt-lg-5"
+                >
+                  <h2 style={{ color: "#272561" }}>
+                    Please select your Driving License type.
+                  </h2>
                 </div>
                 <div className="col-md-4 d-flex gap-2 mb-4">
                   <Button
@@ -312,9 +317,9 @@ const StepDrivingLicense = ({
         </div>
       </div>
 
-      <div className="container position-fixed w-100 bottom-0">
+      {/* <div className="container position-fixed w-100 bottom-0">
         <StepProgress percent={40} />
-      </div>
+      </div> */}
     </div>
   );
 };

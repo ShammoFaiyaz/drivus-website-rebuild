@@ -39,18 +39,16 @@ const StepAgree = ({ current, data, setData, prevStep, nextStep }) => {
 
   return (
     <div className="container">
-      <div className="row" style={{ minHeight: "650px" }}>
+      <div className="row" style={{ minHeight: "575px" }}>
         <div className="col-md-8">
           <Form form={form} autoComplete="off" onFinish={handleFinish}>
             {(values) => (
               <div className="row">
                 <div className="col-12 mt-5 pt-lg-5">
-                  <h3>
-                    By checking the box below, you are making a legally
-                    enforceable declaration that you do not intend to use any
-                    Drivus vehicles for Ridesharing purposes (e.g. Uber / Didi /
-                    Ola etc.). Doing so will have legally penalizing
-                    consequences.
+                  <h3 style={{ color: "#272561" }}>
+                    I confirm that I will never use Drivus vehicles for ride
+                    sharing (e.g. Uber, Didi, Ola etc.). Doing so is a breach of
+                    contract and will incur legally enforceable penalties.
                   </h3>
                 </div>
                 <div className="col-12 my-5">
@@ -72,6 +70,7 @@ const StepAgree = ({ current, data, setData, prevStep, nextStep }) => {
                       className={`w-75 p-3 rounded border ${
                         values.isAgreed && "border-primary"
                       } ride`}
+                      style={{ color: "#272561" }}
                     >
                       Agree
                     </Checkbox>
@@ -81,12 +80,14 @@ const StepAgree = ({ current, data, setData, prevStep, nextStep }) => {
                   <Button
                     size="lg"
                     auto
+                    style={{ color: "#272561" }}
                     className="back-button"
                     onClick={() => prevStep()}
                   >
                     <MdOutlineArrowBackIos size={18} className="me-2 mb-1" />
                     Back
                   </Button>
+
                   <Button
                     color="secondary"
                     bordered
@@ -110,9 +111,9 @@ const StepAgree = ({ current, data, setData, prevStep, nextStep }) => {
         </div>
       </div>
 
-      <div className="container position-fixed w-100 bottom-0">
+      {/* <div className="container position-fixed w-100 bottom-0">
         <StepProgress percent={20} />
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -3,3 +3,15 @@
   border-bottom: none;
   border-color: black;
 }
+
+.faqItem .collapse {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height all ease-in-out;
+}
+
+.faqItem .show {
+  max-height: 500px; /* Set a max-height that would fit most of your content */
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

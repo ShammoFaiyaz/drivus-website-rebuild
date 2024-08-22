@@ -103,15 +103,17 @@ const StepResidentialAddress = ({
 
   return (
     <div className="container">
-      <div className="row" style={{ minHeight: "650px" }}>
+      <div className="row" style={{ minHeight: "570px" }}>
         <div className="col-md-7">
           <Form form={form} autoComplete="off" onFinish={handleFinish}>
             <div className="row">
-              <div className="col-12 mt-5 pt-lg-5 ">
-                <h2>Please provide your Residential Address</h2>
+              <div className="col-12 mt-2 pt-lg-5">
+                <h2 style={{ color: "#272561" }}>
+                  Please provide your Residential Address
+                </h2>
               </div>
 
-              <div className="col-md-12 mt-4">
+              <div className="col-md-12">
                 <Form.Item
                   name="street"
                   rules={[
@@ -283,6 +285,7 @@ const StepResidentialAddress = ({
                             form.resetFields();
                           }
                         }}
+                        style={{ color: "#272561" }}
                       >
                         Same as postal address ?
                       </Checkbox>
@@ -343,9 +346,9 @@ const StepResidentialAddress = ({
         </div>
       </div>
 
-      <div className="container position-fixed w-100 bottom-0">
+      {/* <div className="container position-fixed w-100 bottom-0">
         <StepProgress percent={90} />
-      </div>
+      </div> */}
     </div>
   );
 };

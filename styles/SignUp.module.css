@@ -13,3 +13,17 @@
   height: 70vh;
   border-radius: 28px;
 }
+
+.customCheckbox .ant-checkbox-inner {
+  width: 16px;
+  height: 16px;
+}
+
+.errorCheckbox .ant-checkbox-inner {
+  border-color: red;
+}
+
+.errorCheckbox .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: red;
+  border-color: red;
+}

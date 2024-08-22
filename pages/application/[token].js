@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { Button } from "@nextui-org/react";
 import jwtDecode from "jwt-decode";
 import { useRouter } from "next/router";
 import dlogo from "../../public/drivus-03.png";
+import "../../styles/Registration.module.css";
 
 // Steps
 import StepCitizenship from "../../components/Registration/StepCitizenship";
@@ -15,12 +15,17 @@ import StepIncomeSrc from "../../components/Registration/StepIncomeSrc";
 import StepCarCategory from "../../components/Registration/StepCarCategory";
 import StepPostalAddress from "../../components/Registration/StepPostalAddress";
 import StepResidentialAddress from "../../components/Registration/StepResidentialAddress";
-import { MdOutlineArrowBackIos } from "react-icons/md";
+import {
+  CarOutlined,
+  CloseCircleOutlined,
+  CheckCircleOutlined,
+} from "@ant-design/icons";
 import { getLead, saveLead } from "../../service/lead.service";
 import StepSubmission from "../../components/Registration/StepSubmission";
 import StepPhoneNumber from "../../components/Registration/StepPhoneNumber";
 import Link from "next/link";
 import StepEmargencyContact from "../../components/Registration/StepEmargencyContact";
+import { Steps } from "antd";
 
 function isUUID(str) {
   const regexExp =
@@ -63,6 +68,9 @@ const Registration = () => {
             if (customer.status !== "Draft") {
               setCurrent(11);
             }
+            if (customer.contacts) {
+              console.log(customer.contacts);
+            }
             setData(customer);
           }
         }
@@ -72,6 +80,7 @@ const Registration = () => {
       }
     })();
   }, [token]);
+  console.log(data);
 
   const nextStep = () => {
     setFormData({});
@@ -83,83 +92,100 @@ const Registration = () => {
     current > 0 ? setCurrent(current - 1) : current;
   };
 
-  const handleChange = ({ target: input }) => {
-    const newData = { ...formData };
+  const { Step } = Steps;
 
-    if ((!data[input.id] && !input.value) || data[input.id] == input.value) {
-      delete newData[input.id];
-    } else {
-      newData[input.id] = input.value || null;
-    }
+  const steps = [
+    { title: "Residency", field: "citizenship" },
+    { title: "Usage", field: "isAgreed" },
+    { title: "Date of Birth", field: "dob" }, // Modify as needed
+    { title: "Driver License", field: "drivingLicense" },
+    { title: "100 Point ID", field: "primaryDocuments" },
+    { title: "Income Source", field: "incomeSources" },
+    { title: "Select Service", field: "desiredCar" },
+    { title: "Postal Address", field: "postalAddress" },
+    { title: "Residential Address", field: "residentialAddress" },
+    { title: "Contact Number", field: "phoneNo" }, // Modify as needed
+    { title: "Emergency Contacts", field: "contacts" }, // Modify as needed
+    { title: "Review & Submit", field: null }, // No validation required for this
+  ];
 
-    setFormData(newData);
-  };
+  // const handleChange = ({ target: input }) => {
+  //   const newData = { ...formData };
 
-  const handleObjChange = ({ target: input }, objName) => {
-    const newData = { ...formData };
+  //   if ((!data[input.id] && !input.value) || data[input.id] == input.value) {
+  //     delete newData[input.id];
+  //   } else {
+  //     newData[input.id] = input.value || null;
+  //   }
 
-    if (!newData[objName]) {
-      newData[objName] = {};
-    }
+  //   setFormData(newData);
+  // };
 
-    if (
-      (!(data[objName] && data[objName][input.id]) && !input.value) ||
-      (data[objName] && data[objName][input.id] === input.value)
-    ) {
-      delete newData[objName][input.id];
-      if (newData[objName] && Object.keys(newData[objName]).length === 0)
-        delete newData[objName];
-    } else {
-      newData[objName][input.id] = input.value || null;
-    }
-    setFormData(newData);
-  };
+  // const handleObjChange = ({ target: input }, objName) => {
+  //   const newData = { ...formData };
 
-  const handleUpload = async ({ file, fileList }, fieldName) => {
-    const newData = { ...formData };
+  //   if (!newData[objName]) {
+  //     newData[objName] = {};
+  //   }
 
-    if (
-      (!data[fieldName] && fileList.length < 1) ||
-      data[fieldName] == fileList
-    ) {
-      delete newData[fieldName];
-    } else {
-      newData[fieldName] = fileList || [];
-    }
+  //   if (
+  //     (!(data[objName] && data[objName][input.id]) && !input.value) ||
+  //     (data[objName] && data[objName][input.id] === input.value)
+  //   ) {
+  //     delete newData[objName][input.id];
+  //     if (newData[objName] && Object.keys(newData[objName]).length === 0)
+  //       delete newData[objName];
+  //   } else {
+  //     newData[objName][input.id] = input.value || null;
+  //   }
+  //   setFormData(newData);
+  // };
 
-    setFormData(newData);
-    // const newData = { ...formData };
+  // const handleUpload = async ({ file, fileList }, fieldName) => {
+  //   const newData = { ...formData };
 
-    // console.log(fieldName, fileList);
+  //   if (
+  //     (!data[fieldName] && fileList.length < 1) ||
+  //     data[fieldName] == fileList
+  //   ) {
+  //     delete newData[fieldName];
+  //   } else {
+  //     newData[fieldName] = fileList || [];
+  //   }
 
-    // newData[fieldName] = fileList;
+  //   setFormData(newData);
+  //   // const newData = { ...formData };
 
-    // setFormData(newData);
-  };
+  //   // console.log(fieldName, fileList);
 
-  const handleObjUpload = async ({ file, fileList }, fieldName, objName) => {
-    const newData = { ...formData };
+  //   // newData[fieldName] = fileList;
 
-    if (!newData[objName]) {
-      newData[objName] = {};
-    }
+  //   // setFormData(newData);
+  // };
 
-    // console.log("fileList", fileList);
+  // const handleObjUpload = async ({ file, fileList }, fieldName, objName) => {
+  //   const newData = { ...formData };
 
-    if (
-      (!(data[objName] && data[objName].fileList) && fileList.length < 1) ||
-      (data[objName] && data[objName].fileList === fileList)
-    ) {
-      console.log("xxx");
-      delete newData[objName].fileList;
-      if (newData[objName] && Object.keys(newData[objName]).length === 0)
-        delete newData[objName];
-    } else {
-      console.log("fileList", fileList);
-      newData[objName].fileList = fileList;
-    }
-    setFormData(newData);
-  };
+  //   if (!newData[objName]) {
+  //     newData[objName] = {};
+  //   }
+
+  //   // console.log("fileList", fileList);
+
+  //   if (
+  //     (!(data[objName] && data[objName].fileList) && fileList.length < 1) ||
+  //     (data[objName] && data[objName].fileList === fileList)
+  //   ) {
+  //     console.log("xxx");
+  //     delete newData[objName].fileList;
+  //     if (newData[objName] && Object.keys(newData[objName]).length === 0)
+  //       delete newData[objName];
+  //   } else {
+  //     console.log("fileList", fileList);
+  //     newData[objName].fileList = fileList;
+  //   }
+  //   setFormData(newData);
+  // };
 
   // const handleObjChange = ({ target: input }, objName) => {
   //   const newObj = {...formData[objName]};
@@ -218,7 +244,7 @@ const Registration = () => {
   const handleSubmit = async () => {
     const newData = { ...formData };
 
-    return console.log(newData);
+    // return console.log(newData);
 
     try {
       setLoading({ ...loading, submit: true });
@@ -238,6 +264,7 @@ const Registration = () => {
       }
     }
   };
+  console.log("current", current);
 
   const currentStep = (current) => {
     switch (current) {
@@ -436,6 +463,19 @@ const Registration = () => {
     setValues({ ...values, postalAddress, [target.name]: target.checked });
   };
 
+  const getIcon = (index, field) => {
+    if (index === current) return <CarOutlined style={{ color: "#007bff" }} />;
+
+    const isValid =
+      data[field] && !(Array.isArray(data[field]) && data[field].length === 0);
+
+    return isValid ? (
+      <CheckCircleOutlined style={{ color: "#9315CD" }} />
+    ) : (
+      <CloseCircleOutlined style={{ color: "#f4a2a2" }} />
+    );
+  };
+
   return (
     <div className="container-fluid">
       {/* <Progress
@@ -480,6 +520,28 @@ const Registration = () => {
           ))}
       </div>
       <div>{currentStep(current)}</div>
+      <div className="container">
+        {!["Pending"].includes(data.status) && (
+          <Steps
+            labelPlacement="vertical"
+            current={current}
+            size="small"
+            initial={null}
+            responsive={true}
+            onChange={(currentStep) => setCurrent(currentStep)}
+          >
+            {steps.map((step, index) => (
+              <Step
+                key={index}
+                className="p-0"
+                title={step.title}
+                icon={getIcon(index, step.field)} // Call getIcon here
+                style={{ color: "#9315CD" }}
+              />
+            ))}
+          </Steps>
+        )}
+      </div>
     </div>
   );
 };

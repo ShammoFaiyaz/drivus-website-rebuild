@@ -2,6 +2,8 @@ import ClientSay from "./client-say";
 import How from "./how";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import "swiper/css";
+// import "swiper/css/navigation";
 // import Header from "../components/Header";
 import { BsGeoAlt, BsEnvelope, BsPhone } from "react-icons/bs";
 import {
@@ -14,15 +16,21 @@ import {
 import Link from "next/link";
 import { faqData } from "../utils/array";
 import { useState } from "react";
+import ClientReview from "../components/ClientReview";
+import styles from "../styles/Faq.module.css"; // Import the styles
 
 const Home = () => {
   const [active, setActive] = useState(0);
+
+  const toggleActive = (index) => {
+    setActive((prevIndex) => (prevIndex === index ? null : index));
+  };
 
   return (
     <div>
       <Navbar />
       <How />
-      <ClientSay />
+      <ClientReview />
       <section id="faq" className="faq section-bg">
         <div className="container" data-aos="fade-up">
           <div className="accordion-list">
@@ -48,7 +56,7 @@ const Home = () => {
                     index === faqData.length - 1 ? "faq-item-last" : ""
                   } ${index === 0 ? "collapse" : "collapsed"}`}
                   style={{ cursor: "pointer" }}
-                  onClick={() => setActive(index)}
+                  onClick={() => toggleActive(index)}
                 >
                   <div
                     className="d-flex align-items-center justify-content-between"
@@ -77,12 +85,11 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       <section id="contact" className="contact">
         <div className="container" data-aos="fade-up">
           <div className="section-title">
-            <h2 className="fw-bold">Contact Us</h2>
-            <p style={{ fontSize: 17 }}>Contact us to get started</p>
+            <h2 className="fw-bold heading">Contact Us</h2>
+            <p className="subheading">Contact us to get started</p>
           </div>
 
           <div className="row">
@@ -100,7 +107,7 @@ const Home = () => {
                   <p>56 Williamson Street Oran park NSW 2570</p>
                 </div>
 
-                <div className="email">
+                <div className="email normal-text">
                   <i>
                     <BsEnvelope />
                   </i>
@@ -108,7 +115,7 @@ const Home = () => {
                   <p>info.drivus@gmail.com</p>
                 </div>
 
-                <div className="phone">
+                <div className="phone normal-text">
                   <i>
                     <BsPhone />
                   </i>

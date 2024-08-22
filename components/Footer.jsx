@@ -34,7 +34,7 @@ const Footer = () => {
             </div>
 
             <div className="col-lg-3 col-md-6 footer-links">
-              <h4>Useful Links</h4>
+              <h4> Useful Links</h4>
               <ul>
                 <li>
                   <i>
@@ -94,16 +94,16 @@ const Footer = () => {
                   <i>
                     <HiChevronRight />
                   </i>
-                  <Link href="/rental-contract">
-                    <a>Rental Contract</a>
+                  <Link href="/rental">
+                    <a>Rental</a>
                   </Link>{" "}
                 </li>
                 <li>
                   <i>
                     <HiChevronRight />
                   </i>
-                  <Link href="/rental-contract">
-                    <a>Rent To own Contract</a>
+                  <Link href="/rent-to-own">
+                    <a>Rent-To-Own</a>
                   </Link>
                 </li>
               </ul>
@@ -111,10 +111,6 @@ const Footer = () => {
 
             <div className="col-lg-3 col-md-6 footer-links">
               <h4>Our Social Networks</h4>
-              {/* <p>
-                Cras fermentum odio eu feugiat lide par naso tierra videa magna
-                derita valies
-              </p> */}
               <div className="social-links mt-3">
                 <Link href="/">
                   <a

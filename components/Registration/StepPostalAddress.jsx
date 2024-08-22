@@ -80,13 +80,15 @@ const StepPostalAddress = ({ current, data, setData, prevStep, nextStep }) => {
 
   return (
     <div className="container">
-      <div className="row" style={{ minHeight: "650px" }}>
+      <div className="row" style={{ minHeight: "575px" }}>
         <div className="col-md-7">
           <Form form={form} autoComplete="off" onFinish={handleFinish}>
             {(values) => (
               <div className="row">
                 <div className="col-12 mt-5 pt-lg-5">
-                  <h2>Please provide your Postal Address</h2>
+                  <h2 style={{ color: "#272561" }}>
+                    Please provide your Postal Address
+                  </h2>
                 </div>
 
                 <div className="col-md-12 mt-4">
@@ -233,7 +235,7 @@ const StepPostalAddress = ({ current, data, setData, prevStep, nextStep }) => {
                   </div> */}
                 </div>
 
-                <div className="col-12 d-flex mt-5">
+                <div className="col-12 d-flex mt-3">
                   <Button
                     size="lg"
                     auto
@@ -268,9 +270,9 @@ const StepPostalAddress = ({ current, data, setData, prevStep, nextStep }) => {
         </div>
       </div>
 
-      <div className="container position-fixed w-100 bottom-0">
+      {/* <div className="container position-fixed w-100 bottom-0">
         <StepProgress percent={80} />
-      </div>
+      </div> */}
     </div>
   );
 };

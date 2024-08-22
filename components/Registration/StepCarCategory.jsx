@@ -48,13 +48,15 @@ const StepCarCategory = ({ current, data, setData, prevStep, nextStep }) => {
 
   return (
     <div className="container">
-      <div className="row" style={{ minHeight: "650px" }}>
+      <div className="row" style={{ minHeight: "575px" }}>
         <div className="col-md-7">
           <Form form={form} autoComplete="off" onFinish={handleFinish}>
             {(values) => (
               <div className="row mt-5">
                 <div className="col-12 pt-lg-5">
-                  <h2>Please choose which category of car you desire</h2>
+                  <h2 style={{ color: "#272561" }}>
+                    Please choose which category of car you desire
+                  </h2>
                 </div>
                 <div className="col-12 my-4">
                   <Form.Item
@@ -68,12 +70,19 @@ const StepCarCategory = ({ current, data, setData, prevStep, nextStep }) => {
                   >
                     <Radio.Group>
                       <Space direction="vertical">
-                        <Radio value="Top range Sedan">
+                        <Radio
+                          style={{ color: "#272561" }}
+                          value="Top range Sedan"
+                        >
                           Sedans: $300 - $350
                         </Radio>
-                        <Radio value="Suv">5 seater SUVs: $350 - $400</Radio>
-                        <Radio value="UTE">UTEs: $400 - $450</Radio>
-                        <Radio value="7-8 Seater">
+                        <Radio style={{ color: "#272561" }} value="Suv">
+                          5 seater SUVs: $350 - $400
+                        </Radio>
+                        <Radio style={{ color: "#272561" }} value="UTE">
+                          UTEs: $400 - $450
+                        </Radio>
+                        <Radio style={{ color: "#272561" }} value="7-8 Seater">
                           7- 8 seaters: $400 - $450
                         </Radio>
                       </Space>
@@ -109,7 +118,7 @@ const StepCarCategory = ({ current, data, setData, prevStep, nextStep }) => {
           </Form>
         </div>
         <div className="col-md-5">
-          <div className="mt-5">
+          <div className="">
             <Image
               src={`/img/car/${
                 carImages[form.getFieldValue("desiredCar")] || "cars.jpg"
@@ -121,9 +130,9 @@ const StepCarCategory = ({ current, data, setData, prevStep, nextStep }) => {
         </div>
       </div>
 
-      <div className="container position-fixed w-100 bottom-0">
+      {/* <div className="container position-fixed w-100 bottom-0">
         <StepProgress percent={70} />
-      </div>
+      </div> */}
     </div>
   );
 };

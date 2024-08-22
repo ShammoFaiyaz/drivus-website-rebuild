@@ -13,8 +13,10 @@ function Contacts() {
       <section id="contact" className="contact">
         <div className="container" data-aos="fade-up">
           <div className="section-title">
-            <h2 className="fw-bold">Contact Us</h2>
-            <p style={{ fontSize: 17 }}>Contact us to get started</p>
+            <h2 className="fw-bold" style={{ fontSize: "32px" }}>
+              Contact Us
+            </h2>
+            <p style={{ fontSize: "20px" }}>Contact us to get started</p>
           </div>
 
           <div className="row justify-content-center">
@@ -38,7 +40,7 @@ function Contacts() {
                         <strong className="fw-bolder inline">
                           Phone Number :{" "}
                         </strong>
-                        56 0410567867, 0490887210
+                        0410567867, 0490887210
                       </p>
                     </h2>
                     <a

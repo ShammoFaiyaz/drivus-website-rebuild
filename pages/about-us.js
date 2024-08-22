@@ -20,12 +20,24 @@ const AboutUs = () => {
           <div className="row">
             <div className="col-md-2"></div>
 
-            <div className="col-md-4 mt-4 pt-5 animate__animated animate__fadeInUp animate__delay-2s">
+            <h1
+              className="col-md-4 mt-4 pt-5 fw-bold animate__animated animate__fadeInUp animate__delay-2s"
+              style={{ color: "#272561" }}
+            >
+              Our vision: <br />
+              <span className="ms-4">Unleash your freedom</span>
+              <br />
+              <span className="ms-5">
+                You own a <span>brand new</span> car!
+              </span>
+            </h1>
+
+            {/* <div className="col-md-4 mt-4 pt-5 animate__animated animate__fadeInUp animate__delay-2s">
               <h3
                 className="fw-bold"
                 style={{ fontSize: 27, color: "#272561" }}
               >
-                Our Vision
+                Our
               </h3>
               <h1
                 className="fw-bold mt-3"
@@ -34,7 +46,7 @@ const AboutUs = () => {
                 is to unleash your freedom to own <br />
                 <span className="text-danger">your brand new car!</span>
               </h1>
-            </div>
+            </div> */}
 
             <div className="col-md-5"></div>
           </div>

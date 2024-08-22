@@ -111,50 +111,48 @@ const VerifyCustomer = () => {
                 <GoVerified color="#17c964" size={70} />
               </div>
               <div className="col-12 my-3">
-                <h3>
+                <h3 style={{ fontSize: "20px" }}>
                   Congratulations{" "}
                   <span className="fw-bold">{data?.firstName}!</span>
                 </h3>
-                <h5 className="my-3">
+                <h5 style={{ fontSize: "17px" }} className="my-3">
                   Your email has been verified. <br />
                   Click continue to complete your profile.
                 </h5>
-                <p>
+                <p style={{ fontSize: "16px" }}>
                   Please note you can resume your partially completed
                   application anytime
                 </p>
               </div>
               <div className="col-12 d-flex justify-content-center my-3">
-                <Button
-                  auto
-                  bordered
-                  className="ms-2"
-                  color="secondary"
+                <button
+                  className="ms-2 btn-primary"
                   onClick={handleContinue}
+                  style={{ fontSize: "19px" }}
                 >
                   Continue
-                </Button>
+                </button>
                 {loading && <Loading className="m-2" type="spinner" />}
               </div>
             </div>
           ) : (
             <div className="row">
               <div className="col-12 my-5">
-                <h3>
+                <h3 style={{ fontSize: "20px" }}>
                   Hey <span className="fw-bold">{data?.firstName}!</span>
                 </h3>
-                <h5 className="mt-4">Let's verify your email.</h5>
+                <h5 style={{ fontSize: "17px" }} className="mt-4">
+                  Let's verify your email.
+                </h5>
               </div>
               <div className="col-12 d-flex justify-content-center mb-5">
-                <Button
-                  auto
-                  bordered
-                  className="ms-2"
-                  color="secondary"
+                <button
+                  className="ms-2 btn-primary"
+                  style={{ fontSize: "19px" }}
                   onClick={handleVerify}
                 >
                   Verify
-                </Button>
+                </button>
                 {loading && <Loading className="m-2" type="spinner" />}
               </div>
             </div>

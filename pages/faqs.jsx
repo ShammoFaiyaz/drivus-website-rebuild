@@ -7,6 +7,11 @@ import { faqData } from "../utils/array";
 
 const Faqs = () => {
   const [active, setActive] = React.useState(0);
+
+  const toggleActive = (index) => {
+    setActive((prevIndex) => (prevIndex === index ? null : index));
+  };
+
   return (
     <div>
       <Navbar />
@@ -35,7 +40,7 @@ const Faqs = () => {
                     index === faqData.length - 1 ? "faq-item-last" : ""
                   } ${index === 0 ? "collapse" : "collapsed"}`}
                   style={{ cursor: "pointer" }}
-                  onClick={() => setActive(index)}
+                  onClick={() => toggleActive(index)}
                 >
                   <div
                     className="d-flex align-items-center justify-content-between"

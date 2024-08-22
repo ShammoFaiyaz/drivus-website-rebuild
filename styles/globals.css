@@ -1,6 +1,23 @@
+/* light purple = #9315cd, deep purple = #272561 */
+@font-face {
+  font-family: "Calibri";
+  src: url("/fonts/Calibri_Bold.otf") format("truetype"),
+    url("/fonts/Calibri_Bold.otf") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Calibri";
+  src: url("/fonts/Calibri_Bold.otf") format("truetype"),
+    url("/fonts/Calibri_Bold.otf") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
 body {
-  font-family: "Spectral", serif !important;
-  color: #585a61;
+  font-family: "Calibri", serif !important;
+  color: #272561;
 }
 
 a {
@@ -19,7 +36,27 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Spectral", serif !important;
+  font-family: "Calibri", serif !important;
+}
+
+.heading {
+  font-size: 32px;
+}
+
+.subheading {
+  font-size: 20px;
+}
+
+.normal-text {
+  font-size: 17px;
+}
+
+.small-text {
+  font-size: 16px;
+}
+
+.button-text {
+  font-size: 18px;
 }
 
 /*--------------------------------------------------------------
@@ -165,12 +202,13 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 15px !important;
-  color: black !important;
+  font-size: 16px !important;
+  color: #272561 !important;
   white-space: nowrap;
   transition: 0.3s;
   border-bottom: 2px solid #fff;
   padding: 5px 2px;
+  font-weight: bold;
 }
 
 .navbar a i,
@@ -184,8 +222,8 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover > a {
-  color: #8b37b3 !important;
-  border-color: #272561 !important;
+  color: #9315cd !important;
+  border-color: #9315cd !important;
 }
 
 /**
@@ -272,7 +310,7 @@ h6 {
 # Hero Section
 --------------------------------------------------------------*/
 .download-btn {
-  font-family: "Spectral", serif !important;
+  font-family: "Calibri", serif !important;
   font-weight: 500;
   font-size: 15px;
   display: inline-block;
@@ -410,7 +448,7 @@ h6 {
 
 .contact .info i {
   font-size: 20px;
-  color: #3730a3;
+  color: #272561;
   float: left;
   width: 44px;
   height: 44px;
@@ -424,21 +462,17 @@ h6 {
 
 .contact .info h4 {
   padding: 0 0 0 60px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #7a6960;
+  color: #272561;
 }
 
 .contact .info p {
   padding: 0 0 10px 60px;
   margin-bottom: 20px;
-  font-size: 14px;
-  color: #ab9d95;
-}
-
-.contact .info .email p {
-  padding-top: 5px;
+  font-size: 17px;
+  color: #272561;
 }
 
 .contact .info .social-links {
@@ -448,7 +482,7 @@ h6 {
 .contact .info .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #333;
+  background: #272561;
   color: #fff;
   line-height: 1;
   padding: 8px 0;
@@ -598,7 +632,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 0;
   color: #272561;
-  font-family: "Spectral", serif !important;
+  -family: "Calibri", serif !important;
 }
 
 .section-title p {
@@ -639,7 +673,7 @@ section {
   font-size: 36px;
   color: #444444;
   font-weight: 600;
-  font-family: "Spectral", serif !important;
+  font-family: "Calibri", serif !important;
 }
 
 .pricing .price sup {
@@ -681,7 +715,7 @@ section {
   border-radius: 50px;
   color: #8b37b3;
   font-size: 16px;
-  font-family: "Spectral", serif !important;
+  font-family: "Calibri", serif !important;
   font-weight: 600;
   transition: 0.3s;
   border: 2px solid #8b37b3;
@@ -752,7 +786,7 @@ section {
 .faq .accordion-list a {
   display: block;
   position: relative;
-  font-family: "Spectral", serif !important;
+  font-family: "Calibri", serif !important;
   font-size: 20px;
   line-height: 24px;
   font-weight: 600;
@@ -832,7 +866,7 @@ section {
   line-height: 1;
   font-weight: 700;
   letter-spacing: 0.5px;
-  font-family: "Spectral", serif !important;
+  font-family: "Calibri", serif !important;
 }
 
 #header .logo a {
@@ -877,7 +911,7 @@ section {
   align-items: center;
   justify-content: space-between;
   font-size: 14px;
-  color: #4338ca;
+  color: #272561;
   white-space: nowrap;
   transition: 0.3s;
   border-bottom: 2px solid #fff;
@@ -974,7 +1008,7 @@ section {
   background: #fff;
   padding: 0 0 30px 0;
   color: #47536e;
-  font-size: 14px;
+  font-size: 16px;
   background: #eff2f8;
 }
 
@@ -1049,15 +1083,15 @@ section {
 }
 
 #footer .footer-top .footer-contact p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Spectral", serif !important;
+  font-family: "Calibri", serif !important;
   color: #0f0f0f;
 }
 
 #footer .footer-top h4 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   color: #272561;
   position: relative;
@@ -1222,7 +1256,7 @@ section {
 
 .back-button {
   background: white !important;
-  color: black !important;
+  color: #272880 !important;
 }
 
 .check {
@@ -1276,7 +1310,7 @@ section {
 .modal-button {
   background-color: #8d01fc;
   color: white;
-  font-size: 20px;
+  font-size: 17px;
   height: 45px;
   width: 100%;
   border-radius: 15px;
@@ -1348,41 +1382,107 @@ section {
   border: 2px solid #c73876;
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .btn-primary-outline {
   padding: 9px 38px;
   border-radius: 24px;
   border: 3px solid #8b37b3;
-  color: #272561;
+  color: #9315cd;
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
+  transition: all 0.3s ease;
 }
 
 .btn-primary-outline:hover {
-  padding: 9px 38px;
-  border-radius: 24px;
-  border: 3px solid #8b37b3;
   color: white;
   background-color: #8b37b3;
+  /* animation: all 0.6s ease-in-out; */
+  /* Add animation on hover */
 }
 
 .btn-primary {
   padding: 9px 38px;
   border-radius: 24px;
-  border: 3px solid #8b37b3;
-  background-color: #8b14c2;
+  border: 3px solid #9315cd;
+  background-color: #9315cd;
   color: white;
   font-weight: 600;
+  font-size: 16px;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  padding: 9px 38px;
-  border-radius: 24px;
-  border: 3px solid #8b37b3;
-  color: #8b37b3;
-  background-color: transparent;
+  color: #9315cd;
+  background-color: white;
+  animation: all 0.6s ease-in-out; /* Add animation on hover */
+}
+
+/* card */
+.card-container {
+  position: relative;
+}
+
+.custom-card {
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(232, 228, 228, 0.5);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.card-footer {
+  background: #9315cd;
+  /* background: linear-gradient(
+    90deg,
+    rgba(134, 54, 177, 1) 0%,
+    rgba(34, 44, 139, 1) 93%
+  ); */
+  height: 100px;
+  padding: 10px;
+  text-align: center;
+}
+
+.card-container:hover .overlay {
+  opacity: 1;
+}
+
+.center-button {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    justify-content: center;
+  }
+  .nav-item {
+    margin-bottom: 10px;
+  }
 }

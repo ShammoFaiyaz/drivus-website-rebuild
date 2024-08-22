@@ -18,7 +18,7 @@ const StepEmergencyContact = ({
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const contacts = data.contacts.map((item) => {
+    const contacts = (data.contacts || []).map((item) => {
       const newItem = {};
       if (item.name) newItem.preName = item.name;
       if (item.email) newItem.preEmail = item.email;
@@ -76,29 +76,23 @@ const StepEmergencyContact = ({
   };
 
   const isModified = (values) => {
+    // Check if the number of contacts is different
     if (data.contacts?.length !== values.contacts?.length) return true;
-    return values.contacts.some(
-      ({
-        name,
-        preName,
-        email,
-        preEmail,
-        phone,
-        prePhone,
-        relation,
-        preRelation,
-        address,
-        preAddress,
-        identification,
-        preIdentification,
-      }) =>
-        name !== preName ||
-        email !== preEmail ||
-        phone !== prePhone ||
-        relation !== preRelation ||
-        address !== preAddress ||
-        identification !== preIdentification
-    );
+
+    // Compare each contact's fields
+    return values.contacts?.some((contact, index) => {
+      const prevContact = data.contacts[index] || {};
+
+      return (
+        contact.name !== prevContact.name ||
+        contact.email !== prevContact.email ||
+        contact.phone !== prevContact.phone ||
+        contact.relation !== prevContact.relation ||
+        contact.address !== prevContact.address ||
+        contact.idType !== (prevContact.identification?.split("~")[0] || "") ||
+        contact.idNumber !== (prevContact.identification?.split("~")[1] || "")
+      );
+    });
   };
 
   return (
@@ -117,7 +111,9 @@ const StepEmergencyContact = ({
             {(values) => (
               <div className="row">
                 <div className="col-12 pt-lg-5">
-                  <h2>Please provide your Emergency Contact Details</h2>
+                  <h2 style={{ color: "#272561" }}>
+                    Please provide your Emergency Contact Details
+                  </h2>
                 </div>
                 <div className="col-md-12">
                   <Form.List name="contacts">
@@ -332,9 +328,9 @@ const StepEmergencyContact = ({
           />
         </div>
       </div>
-      <div className="container position-fixed w-100 bottom-0">
+      {/* <div className="container position-fixed w-100 bottom-0">
         <StepProgress percent={100} />
-      </div>
+      </div> */}
     </div>
   );
 };

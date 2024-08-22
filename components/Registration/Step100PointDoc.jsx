@@ -214,7 +214,7 @@ const Step100PointDoc = ({
 
   return (
     <div className="container">
-      <div className="row" style={{ minHeight: "650px" }}>
+      <div className="row" style={{ minHeight: "575px" }}>
         <div className="col-md-7">
           <Form
             form={form}
@@ -225,7 +225,7 @@ const Step100PointDoc = ({
             {(values) => (
               <div className="row">
                 <div className="col-12 my-3">
-                  <h2>
+                  <h2 style={{ color: "#272561" }}>
                     Please provide documents to complete your 100 points ID
                     check.
                   </h2>
@@ -502,7 +502,7 @@ const Step100PointDoc = ({
                   </Form.List>
                 </div>
 
-                <div className="col-8 d-flex my-5">
+                <div className="col-8 d-flex my-3">
                   <Button
                     size="lg"
                     auto
@@ -526,6 +526,7 @@ const Step100PointDoc = ({
                 {getTotalPoint(form.getFieldsValue()) < 100 && (
                   <div className="col-md-12">
                     <Alert
+                      style={{ color: "#272561" }}
                       type="error"
                       message="Application will not be approved without 100 points ID.
                           Do you still wish to continue?  OR Upload more ID documents"
@@ -563,9 +564,9 @@ const Step100PointDoc = ({
         </div>
       </div>
 
-      <div className="container position-fixed w-100 bottom-0">
+      {/* <div className="container position-fixed w-100 bottom-0">
         <StepProgress percent={50} />
-      </div>
+      </div> */}
     </div>
   );
 };

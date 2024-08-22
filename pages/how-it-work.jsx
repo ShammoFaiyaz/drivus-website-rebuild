@@ -101,12 +101,14 @@ const HowItWorks = () => {
               <div className="col-md-4 m-5 py-5 animate__animated animate__fadeInUp animate__delay-2s">
                 <h1
                   className="fw-bold animate__animated animate__fadeIn animate__delay-1s"
-                  style={{ color: "#272561", fontSize: 40 }}
+                  style={{ color: "#272561" }}
                 >
                   How Does It Work? <br />
                   <span className="ms-4">Complete three steps</span>
                   <br />
-                  <span className="ms-4">…and drive your brand new car</span>
+                  <span className="ms-5">
+                    …and drive your <span>brand new</span> car
+                  </span>
                 </h1>
                 <span
                   onClick={() => handleShow("enquire")}
@@ -122,9 +124,9 @@ const HowItWorks = () => {
           </div>
         </div>
         <div className="bg-light my-5">
-          <div className="container py-5" style={{ color: "#25225B" }}>
+          <div className="container py-5" style={{ color: "#272561" }}>
             <div className="row justify-content-between align-items-start">
-              <div className="col-md-4">
+              <div className="col-md-4 normal-text">
                 <div className="text-center">
                   <img
                     style={{ width: "80px" }}
@@ -133,7 +135,10 @@ const HowItWorks = () => {
                     alt=""
                   />
                 </div>
-                <h5 className="fw-bolder">
+                <h5
+                  className="fw-bolder"
+                  style={{ fontSize: "20px", color: "#272561" }}
+                >
                   Step 1: Choose Your Preferred Used Car Plan
                 </h5>
                 <p>
@@ -141,7 +146,7 @@ const HowItWorks = () => {
                   sedans, 5 seater SUVs, UTEs, and 7- 8 seaters.
                 </p>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-4 normal-text">
                 <div className="text-center">
                   {" "}
                   <img
@@ -151,7 +156,10 @@ const HowItWorks = () => {
                     alt=""
                   />
                 </div>
-                <h5 className="fw-bolder">
+                <h5
+                  className="fw-bolder"
+                  style={{ fontSize: "20px", color: "#272561" }}
+                >
                   Step 2: Complete Setting up Your Account
                 </h5>
                 <p>
@@ -162,7 +170,7 @@ const HowItWorks = () => {
                   start date so that you can get driving!
                 </p>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-4 normal-text">
                 <div className="text-center">
                   <img
                     style={{ width: "80px" }}
@@ -171,7 +179,10 @@ const HowItWorks = () => {
                     alt=""
                   />
                 </div>
-                <h5 className="fw-bolder">
+                <h5
+                  className="fw-bolder"
+                  style={{ fontSize: "20px", color: "#272561" }}
+                >
                   Step 3: Drive and Qualify for a Brand-New Rent
                 </h5>
                 <p>
@@ -272,11 +283,11 @@ const HowItWorks = () => {
             <div className="col-md-8">
               <h1
                 className="fw-bold pt-5"
-                style={{ fontSize: 34, color: "#272561" }}
+                style={{ fontSize: "32px", color: "#272561" }}
               >
                 Why Drivus?
               </h1>
-              <p className="mt-3" style={{ fontSize: 17 }}>
+              <p className="mt-3 normal-text">
                 At Drivus, we offer personalized service to each client. We are
                 only a call away, ready to assist you with any queries or
                 concerns. Our goal is to facilitate a hassle-free driving
@@ -288,21 +299,21 @@ const HowItWorks = () => {
             <div className="col-md-8">
               <h1
                 className="fw-bold pt-5"
-                style={{ fontSize: 34, color: "#272561" }}
+                style={{ fontSize: "32px", color: "#272561" }}
               >
                 What Documents Do I Need for Signing up?
               </h1>
-              <ul>
+              <ul className="normal-text">
                 <li>100 pts ID ( Driving licence / Passport /Medicare)</li>
                 <li>Bank Statement</li>
                 <li>Tenancy agreement or Utility Bill</li>
                 <li>3 payslips</li>
               </ul>
             </div>
-            <div className="col-md-8">
+            <div className="col-md-8 normal-text">
               <h1
                 className="fw-bold pt-5"
-                style={{ fontSize: 34, color: "#272561" }}
+                style={{ fontSize: "32px", color: "#272561" }}
               >
                 How Much Does it Cost to Get Started?
               </h1>
